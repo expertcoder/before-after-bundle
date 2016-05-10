@@ -1,0 +1,19 @@
+{
+    "name": "expertcoder/before-after-bundle",
+    "type": "symfony-bundle",
+    "description": "Symfony 2/3 Bundle to allow a before and after method which executes for each action",
+    "homepage": "https://github.com/expertcoder/before-after-bundle",
+    "authors": [
+        {
+            "name": "Samual Anthony",
+            "email": "sam@expertcoder.io"
+        }
+    ],
+    "require": {
+        "php":                      ">=5.3.3",
+        "symfony/framework-bundle": "~2.3"
+    },
+    "autoload": {
+        "psr-4": { "ExpertCoder\\BeforeAfterBundle\\": "" }
+    }
+}
