@@ -24,6 +24,32 @@ Add to AppKernal.php
 
 In any controller, where you would like to have some code run before each action, simply have that controller implement ```ExpertCoder\BeforeAfterBundle\Other\ExecuteBeforeInterface```. Any code inside ```executeBefore()``` will run before the code inside the action method which is been invoked.
 
+###Example
+
+```
+use ExpertCoder\BeforeAfterBundle\Other\ExecuteBeforeInterface;
+use Symfony\Component\HttpKernel\Event\FilterControllerEvent;
+
+class DefaultController extends Controller implements ExecuteBeforeInterface
+{
+    public function executeBefore(FilterControllerEvent $event)
+    {
+        /* code here will execute before the code inside homeAction() */
+    }
+
+    /**
+     * @Template()
+     * @Route("/home")
+     */
+    public function homeAction(Request $request)
+    {
+        // ....
+
+        return array();
+    }
+
+```
+
 ###TODO
 
 * executeAfter functionallity
